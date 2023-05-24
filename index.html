@@ -88,7 +88,18 @@
   </ul>
 
   <script>
-    function toggleGallery(galleryId, image) {
+    function showGallery(galleryId) {
+      var gallery = document.getElementById(galleryId);
+      gallery.style.display = "block";
+    }
+
+    var images = document.getElementsByTagName("img");
+    for (var i = 0; i < images.length; i++) {
+      images[i].addEventListener("click", function() {
+        var galleryId = "galeria" + this.alt.replace(/\D/g, "");
+        showGallery(galleryId);
+      }
+	function toggleGallery(galleryId, image) {
       var gallery = document.getElementById(galleryId);
 
       if (gallery.style.display === "none") {
@@ -98,6 +109,7 @@
         gallery.style.display = "none";
         image.classList.remove("active");
       }
+    }
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/js/bootstrap.bundle.min.js"></script>
