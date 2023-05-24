@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UNNATURAL SOUND SHOWS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-        }
-        
-        main {
-            padding: 20px;
-        }
-        
-        .actuacion {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .actuacion img {
-            display: block;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        
-        .actuacion h2 {
-            margin: 0;
-        }
-        
-        .actuacion p {
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-    </style>
+  <title>UNNATURAL SOUND SHOWS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .gallery {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Actuaciones del Grupo de Música</h1>
-    </header>
-    
-    <main>
-        <div class="actuacion">
-            <img src="D:\Documentos\Web Unnatural github\unnaturalsound.github.io" alt="Actuación 1">
-            <div>
-                <h2>Actuación 1</h2>
-                <p>Fecha: 15 de mayo de 2023</p>
-                <p>Lugar: Teatro Municipal</p>
-                <p>Descripción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies purus et dui vehicula, sit amet vestibulum dolor aliquet.</p>
-            </div>
-        </div>
-        
-        <div class="actuacion">
-            <img src="imagen2.jpg" alt="Actuación 2">
-            <div>
-                <h2>Actuación 2</h2>
-                <p>Fecha: 22 de junio de 2023</p>
-                <p>Lugar: Sala de Conciertos</p>
-                <p>Descripción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies purus et dui vehicula, sit amet vestibulum dolor aliquet.</p>
-            </div>
-        </div>
-        
-        <!-- Agrega más actuaciones aquí -->
-    </main>
+  <h1>UNNATURAL SOUND SHOWS</h1>
+  <ul id="actuaciones">
+    <li>
+      <img src="imagen1.jpg" alt="Actuación 1">
+      <div>
+        <h2>Actuación 1</h2>
+        <p>Localización 1</p>
+      </div>
+      <div class="gallery" id="galeria1">
+        <!-- Aquí puedes agregar las fotos y videos de la actuación 1 -->
+      </div>
+    </li>
+    <li>
+      <img src="imagen2.jpg" alt="Actuación 2">
+      <div>
+        <h2>Actuación 2</h2>
+        <p>Localización 2</p>
+      </div>
+      <div class="gallery" id="galeria2">
+        <!-- Aquí puedes agregar las fotos y videos de la actuación 2 -->
+      </div>
+    </li>
+    <!-- Agrega más actuaciones según sea necesario -->
+  </ul>
+
+  <script>
+    function showGallery(galleryId) {
+      var gallery = document.getElementById(galleryId);
+      gallery.style.display = "block";
+    }
+
+    var images = document.getElementsByTagName("img");
+    for (var i = 0; i < images.length; i++) {
+      images[i].addEventListener("click", function() {
+        var galleryId = "galeria" + this.alt.replace(/\D/g, "");
+        showGallery(galleryId);
+      });
+    }
+  </script>
 </body>
 </html>
