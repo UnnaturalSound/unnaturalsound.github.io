@@ -80,17 +80,11 @@
   </ul>
 
   <script>
-    function showGallery(galleryId) {
-      var gallery = document.getElementById(galleryId);
-      gallery.style.display = "block";
-    }
-
-    var images = document.getElementsByTagName("img");
-    for (var i = 0; i < images.length; i++) {
-      images[i].addEventListener("click", function() {
-        var galleryId = "galeria" + this.alt.replace(/\D/g, "");
-        showGallery(galleryId);
-      });
+    function openGallery(galleryId) {
+      var gallery = document.getElementById(galleryId).innerHTML;
+      var newWindow = window.open('', '_blank');
+      newWindow.document.write('<html><head><title>Galería</title></head><body>' + gallery + '</body></html>');
+      newWindow.document.close();
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/js/bootstrap.bundle.min.js"></script>
