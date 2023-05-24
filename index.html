@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>UNNATURAL SOUND SHOWS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,9 +18,10 @@
 	
 	.logo {
       display: block;
-      width: 1920px; /* Ancho de la imagen del logo */
-      height: 500px; /* Altura de la imagen del logo */
-      margin: 0 auto 20px; /* Ajustar el margen inferior */
+      width: 100%; /* Ancho de la imagen del logo */
+	  max-widht: 1920px;
+      height: autopx; /* Altura de la imagen del logo */
+      margin-bottom: 20px; /* Ajustar el margen inferior */
     }
 
     ul {
@@ -39,6 +42,18 @@
       height: auto;
       margin-right: 20px;
     }
+	
+	.actuacion {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .actuacion img {
+      width: 200px;
+      height: auto;
+      margin-right: 20px;
+    }
 
     .gallery {
       display: none;
@@ -47,19 +62,20 @@
 </head>
 <body>
   <img class="logo" src="head logo.jpg" alt="Logo"> <!-- Agrega la ruta de tu imagen de logo -->
-  <h1>UNNATURAL SOUND SHOWS</h1>
-  <ul id="actuaciones">
-    <li>
-      <img src="Hardlive 2023 mini.jpg" alt="Hardlive">
-      <div>
-        <h2>HARDLIVE 6º ANIVERSARIO</h2>
-        <p>Club Zeppelin (Castellon) SPAIN</p>
-      </div>
-      <div class="gallery" id="galeria1">
-        <!-- Aquí puedes agregar las fotos y videos de la actuación 1 -->
-		<img src="Hardlive 2023.jpg" alt="Imagen 1">
-      </div>
-    </li>
+  <div class="container">
+    <h1 class="text-center">UNNATURAL SOUND SHOWS</h1>
+    <ul class="list-unstyled" id="actuaciones">
+      <li class="actuacion">
+        <img src="imagen1.jpg" alt="Actuación 1" onclick="showGallery('galeria1')" class="rounded">
+        <div>
+          <h2>Actuación 1</h2>
+          <p>Localización 1</p>
+        </div>
+        <div class="gallery" id="galeria1">
+          <img src="Hardlive 2023 mini.jpg" alt="Imagen 1" class="img-thumbnail">
+    <!-- Agrega más fotos y videos según sea necesario -->
+        </div>
+      </li>
     <!-- Agrega más actuaciones según sea necesario -->
   </ul>
 
@@ -77,5 +93,6 @@
       });
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
